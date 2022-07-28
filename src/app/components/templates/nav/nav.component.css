@@ -1,0 +1,14 @@
+.nav{
+    border: 0.3rem solid #000;
+    height: 13rem;
+}
+
+.coins{
+    width: 13rem;
+}
+ option{
+    font-size: 1.4rem;
+ }
+ label{
+    font-size: 2rem;
+}
