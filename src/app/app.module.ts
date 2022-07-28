@@ -6,9 +6,10 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './components/templates/header/header.component';
 import { NavComponent } from './components/templates/nav/nav.component';
+import { QuoteHistoryComponent } from './views/quote-history/quote-history.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, NavComponent],
+  declarations: [AppComponent, HeaderComponent, NavComponent, QuoteHistoryComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
