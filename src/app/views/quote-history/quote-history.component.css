@@ -1,0 +1,28 @@
+.contents{
+    border: 0.3rem solid #000;
+    height: 52rem;
+}
+
+.grid-header{
+    background-color: #ccc;
+}
+
+.search-results{
+    padding: 0.5rem 0.3rem;
+}
+.search-results input{
+    width: 100%;
+    padding: 0.3rem;
+}
+
+input[type="search"]{
+    outline: none;
+    font-size: 1.4rem;
+}
+
+.quotes {
+    padding: 0.5rem;
+    font-size: 1.6rem;
+    height: 4rem;
+    width: 100%;
+}
