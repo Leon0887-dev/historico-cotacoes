@@ -1,29 +1,28 @@
 <nav class="navbar navbar-light  nav p-3">
   <div class="container-fluid">
-    <form class="d-flex justify-content-evenly align-items-center">
+    <form class="d-flex justify-content-evenly align-items-center" [formGroup]="form" (ngSubmit)="handleSubmit()">
       <div class="d-flex flex-column">
         <label class="form-label">Moeda</label>
-        <select class="coins form-select" name="coins">
+        <select class="coins form-select" formControlName="coin">
           <option value="" selected>---</option>
-          <option value="cad"></option>
-          <option value="eur"></option>
-          <option value="usd"></option>
-          <option value="aud"></option>
+          <ng-container *ngFor="let coin of typesCoins">
+            <option value="{{coin.simbolo}}" > {{coin.nomeFormatado}}</option>
+          </ng-container>
         </select>
       </div>
 
       <div class="date-start d-flex flex-column">
         <label class="form-label" for=""> Data Inicial</label>
-        <input type="date" class="date form-control" />
+        <input type="date" class="date form-control" formControlName="dateInit" />
       </div>
       <div class="date-end d-flex flex-column">
         <label class="form-label" for=""> Data Final</label>
-        <input class="form-control date" type="date" />
+        <input class="form-control date" type="date" formControlName="dateEnd" />
       </div>
 
       <div>
           <button
-            type="button" class="btn btn-success btn-lg">
+            type="submit" class="btn btn-success btn-lg">
             <i><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-check-lg" viewBox="0 0 16 16">
                 <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"/>
               </svg></i>
