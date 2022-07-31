@@ -8,11 +8,11 @@ import { HeaderComponent } from './components/templates/header/header.component'
 import { NavComponent } from './components/templates/nav/nav.component';
 import { QuoteHistoryComponent } from './views/quote-history/quote-history.component';
 
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [AppComponent, HeaderComponent, NavComponent, QuoteHistoryComponent],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule,ReactiveFormsModule,],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule,ReactiveFormsModule,FormsModule,],
   providers: [],
   bootstrap: [AppComponent],
 })

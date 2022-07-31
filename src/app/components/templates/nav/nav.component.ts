@@ -1,35 +1,68 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, Output, OnInit } from '@angular/core';
 import { QuotesService } from 'src/app/core/services/quotes.service';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 import * as moment from 'moment';
 
 @Component({
   selector: 'app-nav',
   templateUrl: './nav.component.html',
-  styleUrls: ['./nav.component.css']
+  styleUrls: ['./nav.component.css'],
 })
 export class NavComponent implements OnInit {
-
-  typesCoins:any[] = [];
+  typesCoins: any[] = [];
   form = this.formBuilder.group({
-    coin:[''],
-    dateInit:[''],
-    dateEnd:[''],
+    coin: ['', Validators.required],
+    dateInit: ['', Validators.required],
+    dateEnd: ['', Validators.required],
   });
 
-  constructor(private quoteService: QuotesService, private formBuilder: FormBuilder) { }
+  @Output() resultQuotes: any;
+
+  constructor(
+    private quoteService: QuotesService,
+    private formBuilder: FormBuilder
+  ) {}
 
   ngOnInit(): void {
-    this.quoteService.getCoins().subscribe((res:any) => this.typesCoins = res.value);
-    
-
+    this.quoteService
+      .getCoins()
+      .subscribe((res: any) => (this.typesCoins = res.value));
   }
 
-  handleSubmit(): void {
-    console.log(this.form.value);
-    this.form.value.dateInit = moment(this.form.value.dateInit).format('MM-DD-YYYY')
-    this.form.value.dateEnd = moment(this.form.value.dateEnd).format('MM-DD-YYYY')
-    this.quoteService.getQuotes(this.form.value).subscribe((res:any) => console.log(res.value))
+  handleSubmit() {
+    if (this.validateDate()) {
+      this.getQuotes();
+    } else {
+      alert('Data inválida');
+    }
   }
 
+  validateDate() {
+    this.form.value.dateInit = moment(this.form.value.dateInit).format(
+      'MM-DD-YYYY'
+    );
+    this.form.value.dateEnd = moment(this.form.value.dateEnd).format(
+      'MM-DD-YYYY'
+    );
+
+    if (moment(this.form.value.dateInit) === moment(this.form.value.dateEnd)) {
+      return true;
+    } else if (moment(this.form.value.dateInit).isBefore(this.form.value.dateEnd)){
+      return true;
+    }else{
+      return false;
+    }
+  }
+
+  getQuotes() {
+    this.form.value.dateInit = moment(this.form.value.dateInit).format(
+      'MM-DD-YYYY'
+    );
+    this.form.value.dateEnd = moment(this.form.value.dateEnd).format(
+      'MM-DD-YYYY'
+    );
+    this.quoteService.getQuotes(this.form.value).subscribe((res: any) => {
+      this.resultQuotes = res.value;
+    });
+  }
 }
