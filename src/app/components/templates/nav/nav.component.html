@@ -6,7 +6,9 @@
         <select class="coins form-select" formControlName="coin">
           <option value="" selected>---</option>
           <ng-container *ngFor="let coin of typesCoins">
-            <option value="{{coin.simbolo}}" > {{coin.nomeFormatado}}</option>
+            <ng-container *ngIf="coin.simbolo === 'AUD' || coin.simbolo === 'CAD' || coin.simbolo === 'EUR' || coin.simbolo === 'USD'" >
+              <option value="{{coin.simbolo}}" > {{coin.nomeFormatado}}</option>
+            </ng-container>
           </ng-container>
         </select>
       </div>
