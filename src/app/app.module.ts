@@ -9,9 +9,10 @@ import { NavComponent } from './components/templates/nav/nav.component';
 import { QuoteHistoryComponent } from './views/quote-history/quote-history.component';
 
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+import { FooterComponent } from './components/templates/footer/footer.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, NavComponent, QuoteHistoryComponent],
+  declarations: [AppComponent, HeaderComponent, NavComponent, QuoteHistoryComponent, FooterComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule,ReactiveFormsModule,FormsModule,],
   providers: [],
   bootstrap: [AppComponent],
