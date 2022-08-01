@@ -1,21 +1,60 @@
-.nav{
-    border: 0.3rem solid #000;
-    height: 10rem;
-    margin-bottom: 2rem;
-    background-color: #ccc;
+.nav {
+  border: 0.2rem solid #000;
+  height: auto;
+  margin-bottom: 2rem;
+  background-color: #ccc;
+  border-radius: 0.5rem;
 }
 
-.coins,.date{
-    width: 15rem;
+.coins,
+.date-start,
+.date-end {
+ width: 100%;
 }
-form{
-   width: 100%;
+form {
+  width: 100%;
 }
- option,
- input,
- span{
-    font-size: 1.4rem;
- }
- label{
-    font-size: 2rem;
+option,
+input,
+span,
+select {
+  font-size: 1.5rem;
+}
+label {
+  font-size: 2.2rem;
+}
+
+@media (max-width: 768px) {
+
+    .form{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .coin{
+        width: 100%;
+        padding: 1rem;
+    }
+    .coins{
+        width: 100%;
+    }
+    .date{
+        
+        width: 100%;
+        padding: 1rem;
+    }
+
+    .buttons{
+        margin-top: 1rem;
+    }
+  option,
+  input,
+  span,
+  select {
+    font-size: 1.3rem;
+  }
+  label{
+    font-size: 1.7rem;
+  }
 }

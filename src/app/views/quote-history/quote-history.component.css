@@ -1,28 +1,28 @@
 .contents{
-    border: 0.3rem solid #000;
-    height: 52rem;
+    border: 0.2rem solid #000;
+    max-height: 52rem;
+    
+    border-radius: 0.5rem;
 }
 
-.grid-header{
+.quotes-title{
     background-color: #ccc;
+    font-size: 2.2rem;
 }
 
-.search-results{
-    padding: 0.5rem 0.3rem;
-}
-.search-results input{
-    width: 100%;
-    padding: 0.3rem;
-}
-
-input[type="search"]{
-    outline: none;
-    font-size: 1.4rem;
-}
-
-.quotes {
-    padding: 0.5rem;
+.quotes-result{
     font-size: 1.6rem;
-    height: 4rem;
-    width: 100%;
+    font-weight: 700;
+    border: 1px solid #ddd;
+}
+
+
+
+@media (max-width: 768px) { 
+    .quotes-title{
+        font-size: 1.7rem;
+    }
+    .quotes-result{
+        font-size: 1.4rem;
+    }
 }

@@ -8,7 +8,10 @@ import { Component, Input, OnInit } from '@angular/core';
 export class QuoteHistoryComponent implements OnInit {
   @Input() resultQuotesValues: any;
 
+  
+
   constructor() {}
 
   ngOnInit(): void {}
+
 }

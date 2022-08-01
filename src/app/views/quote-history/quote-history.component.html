@@ -1,32 +1,34 @@
-<div class="contents">
-  <table class="table table-bordered table-striped">
-    <thead>
+<div class="contents overflow-scroll p-2 pt-0 table-responsive">
+  <table class="table table-striped">
+    <thead class="p-3 sticky-top ">
       <tr>
-        <th scope="col" class="grid-header quotes">
+        <th scope="col" class=" quotes-title border-end ">
           Cotação de compra
-          <div>
-            <input type="text">
+          <div class="input-search mt-3">
+            <form >
+              <input type="text" class="form-control" />
+            </form>
           </div>
         </th>
-        <th scope="col" class="grid-header quotes">
+        <th scope="col" class=" quotes-title border-end ">
           Cotação de venda
-          <div>
-            <input type="text">
+          <div class="input-search mt-3">
+            <input type="search" class="form-control"/>
           </div>
         </th>
-        <th scope="col" class="grid-header quotes">
+        <th scope="col" class=" quotes-title border-end ">
           Data e hora de cotação
-          <div>
-            <input type="text">
+          <div class="input-search mt-3">
+            <input type="search" class="form-control"/>
           </div>
         </th>
       </tr>
     </thead>
-    <tbody *ngFor="let resultQuoteValue of resultQuotesValues">
+    <tbody *ngFor="let resultQuoteValue of resultQuotesValues" class="p-3">
       <tr>
-        <td>{{ resultQuoteValue.cotacaoCompra }}</td>
-        <td>{{ resultQuoteValue.cotacaoVenda }}</td>
-        <td>{{ resultQuoteValue.dataHoraCotacao }}</td>
+        <td class="p-3 quotes-result border-end ">{{ resultQuoteValue.cotacaoCompra }}</td>
+        <td class="p-3 quotes-result border-end ">{{ resultQuoteValue.cotacaoVenda }}</td>
+        <td class="p-3 quotes-result border-end ">{{ resultQuoteValue.dataHoraCotacao }}</td>
       </tr>
     </tbody>
   </table>
