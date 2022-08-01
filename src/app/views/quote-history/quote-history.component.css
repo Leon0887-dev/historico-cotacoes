@@ -1,9 +1,9 @@
 .contents{
     border: 0.2rem solid #000;
-    max-height: 48rem;
-    
+    height: 48rem;
     border-radius: 0.5rem;
 }
+
 
 .quotes-title{
     background-color: #ccc;
@@ -16,6 +16,9 @@
     border: 1px solid #ddd;
 }
 
+input[type="text"]{
+    font-size: 1.5rem;
+}
 
 
 @media (max-width: 768px) { 
