@@ -15,9 +15,7 @@ export class NavComponent implements OnInit {
     dateInit: ['', Validators.required],
     dateEnd: ['', Validators.required],
   });
-
-  @Output() resultQuotes: any;
-
+ 
   constructor(
     private quoteService: QuotesService,
     private formBuilder: FormBuilder
@@ -62,7 +60,11 @@ export class NavComponent implements OnInit {
       'MM-DD-YYYY'
     );
     this.quoteService.getQuotes(this.form.value).subscribe((res: any) => {
-      this.resultQuotes = res.value;
+      this.quoteService.addQoutes(res.value);
     });
+  }
+
+  get lisQoutes(){
+    return this.quoteService.listQoutes;
   }
 }
